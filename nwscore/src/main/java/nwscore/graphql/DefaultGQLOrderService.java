@@ -7,8 +7,8 @@ import nwscore.io.RestClientException;
 
 public class DefaultGQLOrderService implements GQLOrderService {
 
-    private GraphqlClient graphqlClient;
-    private NwsContext context;
+    private final GraphqlClient graphqlClient;
+    private final NwsContext context;
 
     public DefaultGQLOrderService(GraphqlClient graphqlClient, NwsContext context) {
         this.graphqlClient = graphqlClient;
@@ -28,7 +28,7 @@ public class DefaultGQLOrderService implements GQLOrderService {
 
 
     //private String  query02 = "{\"query\":\"query MyQuery {\\r\  orders(first: 10, orderBy: CREATED_AT_DESC) {\\r\    edges {\\r\      node {\\r\        id\\r\        associateEmail\\r\        customerEmail\\r\      }\\r\    }\\r\  }\\r\}\\r\\",\"variables\":{}}";
-    private String queryLastOrderItems = "query MyQuery {" +
+    private final String queryLastOrderItems = "query MyQuery {" +
             "  orders(first: 100, offset: 0, orderBy: CREATED_AT_DESC) {" +
             "    edges {" +
             "      node {" +
@@ -67,7 +67,7 @@ public class DefaultGQLOrderService implements GQLOrderService {
             "}";
 
 
-    private String queryLastOrderHeaders = "query MyQuery {" +
+    private final String queryLastOrderHeaders = "query MyQuery {" +
             "  orders(first: 100, offset: 0, orderBy: CREATED_AT_DESC) {" +
             "    edges {" +
             "      node {" +
@@ -108,7 +108,7 @@ public class DefaultGQLOrderService implements GQLOrderService {
             "  }" +
             "}";
 
-    private String queryLast01 = "query MyQuery {" +
+    private final String queryLast01 = "query MyQuery {" +
             "  orders(first: 100, offset: 0, orderBy: CREATED_AT_DESC) {" +
             "    edges {" +
             "      node {" +
@@ -172,7 +172,7 @@ public class DefaultGQLOrderService implements GQLOrderService {
             "  }" +
             "}";
 
-    private String query01 = "query MyQuery {" +
+    private final String query01 = "query MyQuery {" +
             "  orders(first: %d, offset: %d, orderBy: CREATED_AT_ASC) {" +
             "    edges {" +
             "      node {" +

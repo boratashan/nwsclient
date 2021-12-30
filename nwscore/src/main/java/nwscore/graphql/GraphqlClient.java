@@ -7,15 +7,13 @@ import nwscore.io.InvalidCredentialsException;
 import nwscore.io.RestClient;
 import nwscore.io.RestClientException;
 
-import java.io.IOException;
-
 
 public class GraphqlClient  {
 
     private static final String path = "/api/v1/org/data/query";
 
-    private NwsContext context;
-    private RestClient restClient;
+    private final NwsContext context;
+    private final RestClient restClient;
 
 
     public GraphqlClient(NwsContext context) {
